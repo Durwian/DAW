@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alta de Moble</title>
+</head>
+<body>
+    <h1>Afegeix un nou moble a l'estoc</h1>
+    <form action="AltaMobleServlet" method="POST">
+        Nom del moble: <input type="text" name="nom" required><br>
+        Preu: <input type="number" name="preu" step="0.01" required><br>
+        Quantitat: <input type="number" name="quantitat" min="0" required><br>
+        Categoria: 
+        <select name="categoria">
+            <option value="Taula">Taula</option>
+            <option value="Cadira">Cadira</option>
+            <option value="Sofa">Sofa</option>
+            <option value="Armari">Armari</option>
+        </select><br>
+        <input type="submit" value="Afegir moble">
+    </form>
+    <br>
+    <a href='ConsultaStockServlet'>Torna a la pagina de consulta d'estoc</a>
+</body>
+</html>

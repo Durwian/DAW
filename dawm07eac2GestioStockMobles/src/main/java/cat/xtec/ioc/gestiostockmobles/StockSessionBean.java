@@ -15,7 +15,7 @@ public class StockSessionBean {
     }
 
     // Mètode per obtenir la llista de mobles en estoc
-    public List<Moble> getStock() {
+    public List<Moble> getStock() { 
         return stock;
     }
 

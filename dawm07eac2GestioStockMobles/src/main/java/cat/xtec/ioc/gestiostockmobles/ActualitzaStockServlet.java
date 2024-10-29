@@ -15,12 +15,12 @@ public class ActualitzaStockServlet extends HttpServlet {
 
     @EJB
     // TODO EX4 - Bean necessària
-
+    StockSessionBean stockSession = new StockSessionBean();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // TODO EX4 - Agafar el stock de la sessió
-        List<Moble> stock = 
+        List<Moble> stock = stockSession.getStock();
 
         response.setContentType("text/html");
         try (PrintWriter out = response.getWriter()) {

@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
         if(usuari.equals("Victor") && contrasenya.equals("Miguel")){
                 HttpSession session = request.getSession();
                 session.setAttribute("usuari", usuari);
-                response.sendRedirect(request.getContextPath() + "/AltaMoble.html");
+                response.sendRedirect(request.getContextPath() + "/ConsultaStockServlet");
             }else{
             response.sendRedirect(request.getContextPath() + "/Login.html");
         }

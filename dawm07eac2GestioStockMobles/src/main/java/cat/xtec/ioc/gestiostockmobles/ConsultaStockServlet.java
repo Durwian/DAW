@@ -15,12 +15,12 @@ public class ConsultaStockServlet extends HttpServlet {
 
     @EJB
     // TODO EX2 - Bean necessària
-    StockSessionBean stockSession = new StockSessionBean();
+    private StockSessionBean stockSB;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // TODO EX2 - Agafar el stock de la sessió
-        List<Moble> stock = stockSession.getStock();
+        List<Moble> stock = stockSB.getStock();
         
         response.setContentType("text/html");
         try (PrintWriter out = response.getWriter()) {
@@ -29,8 +29,11 @@ public class ConsultaStockServlet extends HttpServlet {
             out.println("<table border='1'><tr><th>Nom</th><th>Preu</th><th>Quantitat</th><th>Categoria</th></tr>");
             // TODO EX2 - Mostrar els mobles de la llista de mobles
             for(Moble moble : stock){
-                out.println("<tr> <td> " + moble.getNom()+"</td><td>" +
-                        moble.getPreu()+"</td><td>"+moble.getQuantitat()+ moble.getCategoria()+"</td></tr>");
+                out.println("<tr> <td> " + moble.getNom()+"</td>"
+                                + "<td>" + moble.getPreu()+"</td>"
+                                + "<td>"+moble.getQuantitat()+"</td>"
+                                + "<td>"+ moble.getCategoria()+"</td>"
+                                + "</tr>");
             }
             out.println("</table>");
             out.println("<br>");

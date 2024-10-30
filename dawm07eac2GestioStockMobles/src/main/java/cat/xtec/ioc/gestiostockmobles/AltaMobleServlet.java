@@ -13,13 +13,22 @@ public class AltaMobleServlet extends HttpServlet {
 
     @EJB
     // TODO EX3 - Bean necessària
-
+    private StockSessionBean stockSB;
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // TODO EX3 - Agafem els paràmetres i afegir el moble al bean d'estoc
+        String nom = request.getParameter("nom");
+        Double preu = Double.valueOf(request.getParameter("preu"));
+        Integer quantitat = Integer.valueOf(request.getParameter("quantitat"));
+        String categoria = request.getParameter("categoria");
+        stockSB.afegirMoble(new Moble(nom, preu, quantitat, categoria));
+        
         
         // Redirigim a la pàgina de consulta d'estoc després d'afegir el moble
-        response.sendRedirect("ConsultaStockServlet");
+        //response.sendRedirect("ConsultaStockServlet");
+        response.sendRedirect(request.getContextPath() + "/ConsultaStockServlet");
+        
     }
 }

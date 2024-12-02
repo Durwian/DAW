@@ -1,0 +1,5 @@
+/Users/victor/NetBeansProjects/Spring_Projects/A00_HolaMaven/stmedioc203/src/main/java/cat/xtec/ioc/controller/HomeController.java
+/Users/victor/NetBeansProjects/Spring_Projects/A00_HolaMaven/stmedioc203/src/main/java/cat/xtec/ioc/controller/MedicamentController.java
+/Users/victor/NetBeansProjects/Spring_Projects/A00_HolaMaven/stmedioc203/src/main/java/cat/xtec/ioc/domain/Medicament.java
+/Users/victor/NetBeansProjects/Spring_Projects/A00_HolaMaven/stmedioc203/src/main/java/cat/xtec/ioc/domain/repository/MedicamentRepository.java
+/Users/victor/NetBeansProjects/Spring_Projects/A00_HolaMaven/stmedioc203/src/main/java/cat/xtec/ioc/domain/repository/impl/InMemoryMedicamentRepository.java

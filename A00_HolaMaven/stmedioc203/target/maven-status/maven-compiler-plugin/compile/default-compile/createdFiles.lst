@@ -1,0 +1,5 @@
+cat/xtec/ioc/domain/repository/impl/InMemoryMedicamentRepository.class
+cat/xtec/ioc/controller/HomeController.class
+cat/xtec/ioc/controller/MedicamentController.class
+cat/xtec/ioc/domain/repository/MedicamentRepository.class
+cat/xtec/ioc/domain/Medicament.class

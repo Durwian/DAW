@@ -11,8 +11,13 @@ package cat.xtec.ioc.domain.repository;
 
 import cat.xtec.ioc.domain.Medicament;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public interface MedicamentRepository {
     List <Medicament> getAllMedicaments();
     Medicament getMedicamentById(String medicamentId);
+    List<Medicament> getMedicamentsByCategory(String category);
+    Set<Medicament> getMedicamentsByFilter(Map<String, List<String>> filterParams);
+    
 }

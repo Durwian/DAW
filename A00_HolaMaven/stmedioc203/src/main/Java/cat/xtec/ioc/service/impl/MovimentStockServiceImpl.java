@@ -6,7 +6,7 @@ import cat.xtec.ioc.domain.repository.MedicamentRepository;
 import cat.xtec.ioc.service.MovimentStockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.stereotype.Controller;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

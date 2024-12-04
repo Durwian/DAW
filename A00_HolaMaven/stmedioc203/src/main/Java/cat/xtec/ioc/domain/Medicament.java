@@ -20,9 +20,9 @@ public class Medicament {
     private boolean active;
     
     public Medicament(){
-        super();
+
     }
-    
+       
     public Medicament(String medicamentId, String name, double price){
         this.medicamentId = medicamentId;
         this.name = name;

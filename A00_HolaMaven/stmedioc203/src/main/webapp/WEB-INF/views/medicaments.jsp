@@ -5,6 +5,7 @@
 --%>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ca">
@@ -31,6 +32,12 @@
                             <p>${medicament.description}</p>
                             <p>${medicament.price}</p>
                             <p>Hi ha ${medicament.stockQuantity} unitats en magatzem</p>
+                            <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+                            <p>
+                                <a href="<spring:url value="/medicaments/medicament?codi=${medicament.medicamentId}" />" class="btn btn-primary">
+                                    <span class="glyphicon-info-sign glyphicon"></span> Detall
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>

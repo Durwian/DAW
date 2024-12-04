@@ -11,6 +11,7 @@ import java.util.Set;
  * @author Usuario
  */
 public interface MedicamentService {
+    void addMedicament(Medicament medicament);
     List <Medicament> getAllMedicaments();
     Medicament getMedicamentById(String medicamentID);
     List<Medicament> getMedicamentsByCategory(String category);

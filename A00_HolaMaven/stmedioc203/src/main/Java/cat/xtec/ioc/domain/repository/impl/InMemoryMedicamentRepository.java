@@ -47,6 +47,11 @@ public class InMemoryMedicamentRepository implements MedicamentRepository{
     }
     
     @Override
+    public void addMedicament(Medicament medicament){
+        listOfMedicaments.add(medicament);
+    }
+    
+    @Override
     public List <Medicament> getAllMedicaments(){
         return listOfMedicaments;
     }

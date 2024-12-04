@@ -15,9 +15,11 @@ import java.util.Map;
 import java.util.Set;
 
 public interface MedicamentRepository {
+    void addMedicament(Medicament medicament);
     List <Medicament> getAllMedicaments();
     Medicament getMedicamentById(String medicamentId);
     List<Medicament> getMedicamentsByCategory(String category);
     Set<Medicament> getMedicamentsByFilter(Map<String, List<String>> filterParams);
+    
     
 }

@@ -33,10 +33,17 @@ public class MedicamentServiceImpl implements MedicamentService {
         return medicamentRepository.getMedicamentById(medicamentID);
     }
     
+    @Override
     public List<Medicament> getMedicamentsByCategory(String category){
         return medicamentRepository.getMedicamentsByCategory(category);
     }
+    @Override
     public Set<Medicament> getMedicamentsByFilter(Map<String, List<String>> filterParams){
         return medicamentRepository.getMedicamentsByFilter(filterParams);
+    }
+    
+    @Override
+    public void addMedicament(Medicament medicament){
+        medicamentRepository.addMedicament(medicament);
     }
 }

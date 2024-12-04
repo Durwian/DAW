@@ -31,6 +31,6 @@ public class MovimentStockServiceImpl implements MovimentStockService {
             throw new IllegalArgumentException("No hi ha poru unitats. La quantitat"
                     + "en estoc és: " + medicamentById.getStockQuantity());
         }
-        medicamentById.setStockQuantity(medicamentById.getStockQuantity()); 
+        medicamentById.setStockQuantity(medicamentById.getStockQuantity() + signedQuantity); 
     }
 }

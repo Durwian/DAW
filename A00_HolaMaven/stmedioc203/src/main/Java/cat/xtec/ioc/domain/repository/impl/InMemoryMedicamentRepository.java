@@ -54,6 +54,7 @@ public class InMemoryMedicamentRepository implements MedicamentRepository{
         for(Medicament medicament : listOfMedicaments){
             if(medicament != null && medicament.getMedicamentId() != null &&
                     medicament.getMedicamentId().equals(medicamentId)){
+                medicamentById = medicament;
                 break;
             }
         }

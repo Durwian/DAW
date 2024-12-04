@@ -13,5 +13,5 @@ import java.util.List;
  */
 public interface MedicamentService {
     List <Medicament> getAllMedicaments();
-    Medicament getMedicamentById(String medicamentId);
+    Medicament getMedicamentById(String medicamentID);
 }

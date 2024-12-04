@@ -4,5 +4,7 @@ cat\xtec\ioc\controller\MovimentStockController.class
 cat\xtec\ioc\domain\repository\MedicamentRepository.class
 cat\xtec\ioc\service\impl\MovimentStockServiceImpl.class
 cat\xtec\ioc\domain\Medicament.class
+cat\xtec\ioc\service\MedicamentService.class
 cat\xtec\ioc\service\MovimentStockService.class
 cat\xtec\ioc\domain\repository\impl\InMemoryMedicamentRepository.class
+cat\xtec\ioc\service\impl\MedicamentServiceImpl.class

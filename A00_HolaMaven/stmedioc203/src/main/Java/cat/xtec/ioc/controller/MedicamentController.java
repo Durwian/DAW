@@ -9,7 +9,8 @@ package cat.xtec.ioc.controller;
  * @author victor
  */
 
-import cat.xtec.ioc.domain.repository.MedicamentRepository;
+
+import cat.xtec.ioc.service.MedicamentService;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
@@ -17,22 +18,21 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-
+@RequestMapping("/medicaments")
 public class MedicamentController {
     
     @Autowired
-    private MedicamentRepository medicamentRepository;
+    private MedicamentService medicamentService;
     
-    @RequestMapping(value= "/medicaments", method = RequestMethod.GET)
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+    @RequestMapping("/all")
+    public ModelAndView allMedicaments(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException{
         ModelAndView modelview = new ModelAndView("medicaments");
         
-        modelview.getModelMap().addAttribute("medicaments", medicamentRepository.getAllMedicaments());
+        modelview.getModelMap().addAttribute("medicaments", medicamentService.getAllMedicaments());
         return modelview;
     }
 }

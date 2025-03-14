@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6</title>
+    <script src="ex6.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffffff, #f4efef);
+            color: #fff;
+        }
+
+        .vending-machine {
+            width: 300px;
+            height: 500px;
+            background: #eb5858;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            display: grid;
+            grid-template-rows: 60px 1fr 60px;
+            overflow: hidden;
+        }
+
+        .vending-header {
+            background: #444;
+            text-align: center;
+            line-height: 60px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #666;
+        }
+
+        .vending-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .drink-button {
+            background: linear-gradient(to bottom, #fff, #bfbdbd);
+            border: 2px solid #222;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .drink-button:hover {
+            background: linear-gradient(to bottom, #c9f01e, #def03f);
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .vending-footer {
+            background: #444;
+            text-align: center;
+            line-height: 60px;
+            font-size: 14px;
+            border-top: 2px solid #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="vending-machine">
+        <div class="vending-header">Màquina expenedora</div>
+        <div class="vending-grid">
+            <div class="drink-button" onclick="comprar('cocacola');">Coca-Cola</div>
+            <div class="drink-button" onclick="comprar('fanta');">Fanta</div>
+            <div class="drink-button" onclick="comprar('sprite');">Sprite</div>
+            <div class="drink-button" onclick="comprar('pepsi');">Pepsi</div>
+            <div class="drink-button" onclick="comprar('aquarius');">Aquarius</div>
+            <div class="drink-button" onclick="comprar('nestea');">Nestea</div>
+            <div class="drink-button" onclick="comprar('monster');">Monster</div>
+            <div class="drink-button" onclick="comprar('redbull');">Red Bull</div>
+            <div class="drink-button" onclick="comprar('aigua');">Aigua</div>
+        </div>
+        <div class="vending-footer"><button onclick="log();">LOG</button></div>
+    </div>
+</body>
+</html>

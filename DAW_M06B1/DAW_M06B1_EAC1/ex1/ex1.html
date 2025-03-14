@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    <script>
+        let nom;
+        let cognoms;
+        let anyActual;
+        let anyNaixement;
+        let souAnual;
+        let despesaMensual;
+
+        nom = 'Victor';
+        cognoms = 'Miguel Forner';
+        anyActual = new Date().getFullYear();
+        anyNaixement = 1986;
+        souAnual = 23000;
+        despesaMensual = 900;
+
+        let edatActual = anyActual - anyNaixement;
+        let estalviAnual = ((souAnual/12) - despesaMensual) * 12;
+        let anysPerMilio = 1000000 / estalviAnual;
+
+        console.log("Hola, em dic ", nom, " ", cognoms, " i tinc ", edatActual, "anys. Amb un sou anual de ", souAnual, " euros i una despesa mensual de ", despesaMensual, " euros, puc estalviar ", estalviAnual, " euros a l'any. Necessitare ", anysPerMilio, " anys per arribar a 1 milio d'euros, i aixo sera l'any ", anyActual + anysPerMilio);
+
+
+        
+    </script>
+</body>
+</html>

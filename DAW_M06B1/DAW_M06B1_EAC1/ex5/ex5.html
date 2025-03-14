@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        #info {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p id="info">Aquí es mostrarà la informació.</p>
+    <script>
+
+        function actualitzarContingut() {
+            // Aquí has d'implementar la lògica de l'exercici.
+            
+            
+        }
+
+        // Detectem els esdeveniments de canvi de mida i càrrega inicial
+        window.addEventListener('resize', actualitzarContingut);
+        window.addEventListener('load', actualitzarContingut);
+    </script>
+</body>
+</html>

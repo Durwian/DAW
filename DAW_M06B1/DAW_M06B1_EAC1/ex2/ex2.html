@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2</title>
+</head>
+<body>
+    <script>
+        let nom = window.prompt("Nom:");
+        let cognoms = window.prompt("Cognoms:");
+        let anyNaixment = window.prompt('Any de naixement:');
+        let souMensual = window.prompt("Sou mensual (en euros):");
+        let despesesMensual = window.prompt("Despeses menusals (en euros):");
+        let anyActual = new Date().getFullYear();
+        let estalviAnual = (souMensual - despesesMensual) * 12;
+        let tipusEstalvi = "";
+        
+        if (estalviAnual < 0){
+            tipusEstalvi = "Endeutat";
+        }else if (estalviAnual < 1001){
+            tipusEstalvi = "Sense estalvi";
+        }else if (estalviAnual < 4001){
+            tipusEstalvi = "Estalvi ocasional";
+        }else if (estalviAnual < 7001){
+            tipusEstalvi = "Estalvi moderat";
+        }else{
+            tipusEstalvi = "Gran estalviador";
+        }
+
+        let missatge = 'Hola '+ nom + cognoms +', tens ' + (anyActual - anyNaixment) + 
+        ' anys. El teu estalvi anual es de ' + estalviAnual + ' euros. Pertanys a la categoria "' + tipusEstalvi + '".';
+
+        alert(missatge);
+
+        
+
+
+    </script>
+</body>
+</html>

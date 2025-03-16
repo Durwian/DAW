@@ -7,7 +7,48 @@
 </head>
 <body>
     <script>
-        // Escriu aquí el teu codi
+
+        function comprobarDada(missatge, demanaNumero = false, valorMin = null){
+            let dada;
+            let dadaCorrecte = true;
+            while(!dadaCorrecte){
+                dada = window.prompt(missatge);
+                if(dada === null){
+                    alert("introdueix un valor.");
+                }else if(demanaNumero){
+                    dada = Number(dada);
+                    if(!isNaN(dada) || dada < valorMin){
+                        alert("Introduiex un número vàlid.");
+                    }else{
+                        dadaCorrecte = true;
+                    }
+                }else{dadaCorrecte = true}
+            }              
+        }
+
+        let nom = comprobarDada("Nom:");
+        let cognoms = comprobarDada("Cognoms:");
+        let anyNaixment = comprobarDada('Any de naixement:', true, 1900);
+        let souMensual = comprobarDada("Sou mensual (en euros):", true, 0);
+        let despesesMensual = comprobarDada("Despeses menusals (en euros):", true, 0);
+        let anyActual = new Date().getFullYear();
+        let estalviAnual = (souMensual - despesesMensual) * 12;
+        let edat = anyActual - anyNaixement;
+        let tipusEstalvi = "";
+        
+        if (estalviAnual < 0){
+            tipusEstalvi = "Endeutat";
+        }else if (estalviAnual < 1001){
+            tipusEstalvi = "Sense estalvi";
+        }else if (estalviAnual < 4001){
+            tipusEstalvi = "Estalvi ocasional";
+        }else if (estalviAnual < 7001){
+            tipusEstalvi = "Estalvi moderat";
+        }else{
+            tipusEstalvi = "Gran estalviador";
+        }
+
+        alert(`Hola, ${nom} ${cognoms}. Tens ${edat} anys. El teu estalvi anual és de ${estalviAnual} €. Pertanys a la categoria de "${categoria}"`);
 
         
     </script>

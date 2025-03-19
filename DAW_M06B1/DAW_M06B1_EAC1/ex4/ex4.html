@@ -21,8 +21,19 @@
                 if(validaData() === 2){showError("El mes no pot ser inferior a 1, ni superior a 12.")};
                 if(validaData() === 3){showError("El dia ha de ser entre 1 i (30 o 31), si es febrer 28, recorda que si es any de traspas el febrer no pot tenir mes de 29 dies")};
             }else{
-                dada = new Date(any, mes - 1, dia);
-                console.log(dada - Date());
+                let signe = 1;
+                anyAniversari = anyActual;
+                if(mes >= mesActual && dia >= diaActual){
+                    anyAniversari ++;
+                }else{
+                    signe = -1;
+                }
+                dataAniversari = new Date(anyAniversari, mes - 1, dia);
+                console.log('Data aniversari: ',dataAniversari, 'Data actual: ', dataActual);
+                
+                let diesRestants = Math.ceil((dataAniversari.getTime() - dataActual.getTime())/(1000 * 60 * 60 * 24) * signe);
+                console.log(diesRestants);
+                alert(`La diferencia de dies es: ${diesRestants}`);
             }
 
         }
@@ -46,13 +57,16 @@
             alert(missatge)
         }
         
-        let dada = document.getElementById('data_naixement').value;; 
         
-        let [dia,mes,any] = dada.split("/").map(Number);
-        const anyActual = new Date().getFullYear();
-        const mesActual = new Date().getMonth() + 1;
-        const diaActual = new Date().getDate();
+        const dataActual = new Date();
+        const anyActual = dataActual.getFullYear();
+        const mesActual = dataActual.getMonth() + 1;
+        const diaActual = dataActual.getDate();
         let regEx = /^\d{2}\/\d{2}\/\d{4}$/;
+        let dada = document.getElementById('data_naixement').value;; 
+        let [dia,mes,any] = dada.split("/").map(Number);
+        
+        let anyAniversari;
         
 
     </script>

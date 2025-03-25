@@ -13,17 +13,18 @@
     <script>
 
         function calcula() {
-            
-            if(dada && !regEx.test(dada)){
+            let dada = document.getElementById("data_naixement").value; 
+            let [dia,mes,any] = dada.split("/").map(Number);
+            if(!dada && !regEx.test(dada)){
                 showError('El format no es correcte, ha de ser dd/mm/aaaa');
-            }else if(validaData() !== 0){
-                if(validaData() === 1){showError("L'any no pot ser menor a 1900 ni mes que l'actual")};
-                if(validaData() === 2){showError("El mes no pot ser inferior a 1, ni superior a 12.")};
-                if(validaData() === 3){showError("El dia ha de ser entre 1 i (30 o 31), si es febrer 28, recorda que si es any de traspas el febrer no pot tenir mes de 29 dies")};
+            }else if(validaData() != 0){
+                if(validaData() == 1){showError("L'any no pot ser menor a 1900 ni mes que l'actual")};
+                if(validaData() == 2){showError("El mes no pot ser inferior a 1, ni superior a 12.")};
+                if(validaData() == 3){showError("El dia ha de ser entre 1 i (30 o 31), si es febrer 28, recorda que si es any de traspas el febrer no pot tenir mes de 29 dies")};
             }else{
                 let signe = 1;
                 anyAniversari = anyActual;
-                if(mes >= mesActual && dia >= diaActual){
+                if(mes <= mesActual && dia <= diaActual){
                     anyAniversari ++;
                 }else{
                     signe = -1;
@@ -33,7 +34,7 @@
                 
                 let diesRestants = Math.ceil((dataAniversari.getTime() - dataActual.getTime())/(1000 * 60 * 60 * 24) * signe);
                 console.log(diesRestants);
-                alert(`La diferencia de dies es: ${diesRestants}`);
+                alert(`Falten: ${diesRestants * signe} dies pel teu aniversari`);
             }
 
         }
@@ -63,8 +64,8 @@
         const mesActual = dataActual.getMonth() + 1;
         const diaActual = dataActual.getDate();
         let regEx = /^\d{2}\/\d{2}\/\d{4}$/;
-        let dada = document.getElementById('data_naixement').value;; 
-        let [dia,mes,any] = dada.split("/").map(Number);
+        let dada;
+        let [dia,mes,any] = [];
         
         let anyAniversari;
         

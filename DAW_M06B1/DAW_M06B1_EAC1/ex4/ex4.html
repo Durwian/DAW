@@ -13,8 +13,8 @@
     <script>
 
         function calcula() {
-            
-            if(dada && !regEx.test(dada)){
+            conosle.log(dada)
+            if(dada || !regEx.test(dada)){
                 showError('El format no es correcte, ha de ser dd/mm/aaaa');
             }else if(validaData() !== 0){
                 if(validaData() === 1){showError("L'any no pot ser menor a 1900 ni mes que l'actual")};

@@ -1,0 +1,6 @@
+cat\xtec\ioc\gestiostockmobles\Moble.class
+cat\xtec\ioc\gestiostockmobles\AltaMobleServlet.class
+cat\xtec\ioc\gestiostockmobles\LoginServlet.class
+cat\xtec\ioc\gestiostockmobles\StockSessionBean.class
+cat\xtec\ioc\gestiostockmobles\ActualitzaStockServlet.class
+cat\xtec\ioc\gestiostockmobles\ConsultaStockServlet.class

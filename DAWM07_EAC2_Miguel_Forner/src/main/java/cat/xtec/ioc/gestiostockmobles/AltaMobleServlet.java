@@ -21,10 +21,10 @@ public class AltaMobleServlet extends HttpServlet {
         // TODO EX3 - Agafem els paràmetres i afegir el moble al bean d'estoc
         String nom = request.getParameter("nom");
         Double preu = Double.valueOf(request.getParameter("preu"));
-        Integer quantitat = Integer.valueOf(request.getParameter("quantitat"));
+        int quantitat = Integer.parseInt(request.getParameter("quantitat"));
         String categoria = request.getParameter("categoria");
         stockSB.afegirMoble(new Moble(nom, preu, quantitat, categoria));
-        
+         
         
         // Redirigim a la pàgina de consulta d'estoc després d'afegir el moble
         //response.sendRedirect("ConsultaStockServlet");

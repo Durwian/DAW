@@ -13,8 +13,9 @@
     <script>
 
         function calcula() {
-            
-            if(dada && !regEx.test(dada)){
+            let dada = document.getElementById("data_naixement").value; 
+            let [dia,mes,any] = dada.split("/").map(Number);
+            if(!dada && !regEx.test(dada)){
                 showError('El format no es correcte, ha de ser dd/mm/aaaa');
             }else if(validaData() != 0){
                 if(validaData() == 1){showError("L'any no pot ser menor a 1900 ni mes que l'actual")};
@@ -65,7 +66,6 @@
         let regEx = /^\d{2}\/\d{2}\/\d{4}$/;
         let dada;
         let [dia,mes,any] = [];
-        
         let anyAniversari;
         
 

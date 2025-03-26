@@ -19,11 +19,37 @@
 <body>
     <p id="info">Aquí es mostrarà la informació.</p>
     <script>
+        setTimeout(actualitzarContingut(),1000);
+        
 
         function actualitzarContingut() {
             // Aquí has d'implementar la lògica de l'exercici.
+            let amplada = window.innerWidth;
+            let colorFons = document.body.style.backgroundColor;
+            let colorText = document.getElementById("info").style.color;
+        
+            console.log("La url es:" + window.document.getRootNode().baseURI);
+            console.log(amplada);
+            if(amplada <= 550){
+                colorFons == "blue";
+                colorText == "#fff";
+            }
+            if(amplada > 550 && amplada < 800){
+                colorFons == "orange";
+                colorText == "#000";
+            }
+            if(amplada > 800){
+                colorFons == "pink";
+                colorText == "green";
+            }
             
             
+            /*◦ Si l’amplada és menor de 550 píxels:
+            ▪ El fons del body ha de ser blau i el text del paràgraf ha de ser blanc.
+        ◦ Si l’amplada és entre 550 i 800 píxels:
+            ▪ El fons del body ha de ser taronja i el text del paràgraf ha de ser negre.
+        ◦ Si l’amplada és superior a 800 píxels:
+            ▪ El fons del body ha de ser rosa i el text del paràgraf ha de ser verd.*/
         }
 
         // Detectem els esdeveniments de canvi de mida i càrrega inicial

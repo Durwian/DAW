@@ -29,31 +29,28 @@
             
             console.log("La url es:" + window.document.getRootNode().baseURI);
             console.log(amplada);
-			if(window.innerHeight > 300){
-				if(fill === null){
-					if(amplada <= 550){
-						document.body.style.backgroundColor = "blue";
-						text.style.color = "#fff";
-					}
-					if(amplada > 550 && amplada < 800){
-						document.body.style.backgroundColor = "#f1b963";
-						text.style.color = "#000";
-					}
-					if(amplada > 800){
-						document.body.style.backgroundColor = "pink";
-						text.style.color = "#cbf078";
-					}
-				}else{
-					fill.remove(fill);
-				}
-			}else{ 
-				if(fill === null){
-					fill = document.createElement("p")
-                    fill.setAttribute("id","text_nou");
-                    fill.innerHTML = "Atencio l'altura de la finestra es molt petita!";
-					document.body.insertBefore(fill, text);
-					
-				}
+			
+            if(amplada <= 550){
+                document.body.style.backgroundColor = "blue";
+                text.style.color = "#fff";
+            }
+            if(amplada > 550 && amplada < 800){
+                document.body.style.backgroundColor = "#f1b963";
+                text.style.color = "#000";
+            }
+            if(amplada > 800){
+                document.body.style.backgroundColor = "pink";
+                text.style.color = "green";
+            }
+
+			if(window.innerHeight > 300 && fill !== null){
+				fill.remove(fill);
+            }else if(window.innerHeight < 300 && fill === null){ 
+                fill = document.createElement("p")
+                fill.setAttribute("id","text_nou");
+                fill.innerHTML = "Atencio l'altura de la finestra es molt petita!";
+                document.body.append(fill);
+                document.getElementById("text_nou").style.textAlign = "center";
             }
         }
 

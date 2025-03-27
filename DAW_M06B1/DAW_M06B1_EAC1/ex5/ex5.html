@@ -44,16 +44,15 @@
 						text.style.color = "#cbf078";
 					}
 				}else{
-					Element.remove(fill);
+					fill.remove(fill);
 				}
-			}
-            if(window.innerHeight < 300){ 
-				if(!document.getElementById("text_nou")){
-					document.createElement("p").setAttribute("id","text_nou");
-					fill = document.getElementById("text_nou");
-					document.body.appendChild(fill);
-					document.insertBefore(fill,text);
-					fill.innerHTML = "Atencio l'altura de la finestra es molt petita!";
+			}else{ 
+				if(fill === null){
+					fill = document.createElement("p")
+                    fill.setAttribute("id","text_nou");
+                    fill.innerHTML = "Atencio l'altura de la finestra es molt petita!";
+					document.body.insertBefore(fill, text);
+					
 				}
             }
         }

@@ -19,32 +19,43 @@
 <body>
     <p id="info">Aquí es mostrarà la informació.</p>
     <script>
-        
+        setInterval(actualitzarContingut,1000);
 
         function actualitzarContingut() {
             // Aquí has d'implementar la lògica de l'exercici.
             let amplada = window.innerWidth;
             let text = document.getElementById("info");
-        
+			let fill = document.getElementById("text_nou");
+            
             console.log("La url es:" + window.document.getRootNode().baseURI);
             console.log(amplada);
-            if(amplada <= 550){
-                document.body.style.backgroundColor = "blue";
-                text.style.color = "#fff";
+			if(window.innerHeight > 300){
+				if(fill === null){
+					if(amplada <= 550){
+						document.body.style.backgroundColor = "blue";
+						text.style.color = "#fff";
+					}
+					if(amplada > 550 && amplada < 800){
+						document.body.style.backgroundColor = "#f1b963";
+						text.style.color = "#000";
+					}
+					if(amplada > 800){
+						document.body.style.backgroundColor = "pink";
+						text.style.color = "#cbf078";
+					}
+				}else{
+					Element.remove(fill);
+				}
+			}
+            if(window.innerHeight < 300){ 
+				if(!document.getElementById("text_nou")){
+					document.createElement("p").setAttribute("id","text_nou");
+					fill = document.getElementById("text_nou");
+					document.body.appendChild(fill);
+					document.insertBefore(fill,text);
+					fill.innerHTML = "Atencio l'altura de la finestra es molt petita!";
+				}
             }
-            if(amplada > 550 && amplada < 800){
-                document.body.style.backgroundColor = "orange";
-                text = "#000";
-            }
-            if(amplada > 800){
-                document.body.style.backgroundColor = "pink";
-                text = "green";
-            }
-            if(amplada < 300){
-                text.innerHTML = "Cuidao!";
-            }
-            
-
         }
 
         // Detectem els esdeveniments de canvi de mida i càrrega inicial

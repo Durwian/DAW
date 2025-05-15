@@ -27,13 +27,13 @@ Tot allò que no s’ha especificat en aquest enunciat podeu implementar-ho com 
 */
 
 	actualitzarEstoc:function(id, nouEstoc){
-		this.jocs.forEach(joc => {
-			if(joc.id == id){
-				joc.estoc = nouEstoc;
+		for(let joc in this.jocs){
+			if(this.jocs[joc].id == id){
+				this.jocs[joc].estoc = nouEstoc;
 				return true;
-			};
-		});
+		}
 		return false;
+		};
 	},
 
 	afegirJoc: function (titol, plataforma, estoc){
